@@ -1,0 +1,15 @@
+{
+  "name": "path-generator",
+  "version": "1.0.0",
+  "description": "URL path generator",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "narazaka",
+  "license": "MIT",
+  "dependencies": {
+    "tslint": "^5.7.0",
+    "typescript": "^2.5.3"
+  }
+}
