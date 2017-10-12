@@ -8,6 +8,7 @@
     "dist"
   ],
   "scripts": {
+    "prepublish": "npm dist",
     "dist": "tsc",
     "lint": "tslint -p tsconfig.json --type-check src/routes-generator.ts",
     "doc": "typedoc --out doc --disableOutputCheck --excludeNotExported --excludeExternals src/routes-generator.ts"
