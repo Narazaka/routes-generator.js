@@ -68,7 +68,7 @@
 				<ul>
 					<li><strong><a href="https://narazaka.github.io/routes-generator.js/">API Document</a></strong></li>
 				</ul>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { both, collection, member, routes } <span class="hljs-keyword">from</span> <span class="hljs-string">"./routes-generator"</span>;
+				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { both, collection, member, routes } <span class="hljs-keyword">from</span> <span class="hljs-string">"routes-generator"</span>;
 
 <span class="hljs-keyword">const</span> r = routes({
     config: collection({
@@ -94,6 +94,11 @@
 <span class="hljs-built_in">console</span>.log(r.items().new()); <span class="hljs-comment">// "/items/new"</span>
 <span class="hljs-built_in">console</span>.log(r.items(<span class="hljs-number">1</span>).edit()); <span class="hljs-comment">// "/items/1/edit"</span>
 </code></pre>
+				<h2 id="with-typescript">With TypeScript</h2>
+				<ul>
+					<li>You can change the path by IDE(VSCode etc.)&#39;s symbol change function.</li>
+					<li>You can easily complement the path with IDE.</li>
+				</ul>
 				<h2 id="license">License</h2>
 				<p>This is released under <a href="https://narazaka.net/license/MIT?2017">MIT License</a>.</p>
 			</div>
