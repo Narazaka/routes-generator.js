@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "REST like URL routes generator for frontend (for react-router etc)",
   "main": "./dist/routes-generator.js",
-  "typings": "./dist/routes-generator.d.ts",
+  "types": "./dist/routes-generator.d.ts",
   "scripts": {
     "dist": "tsc",
     "lint": "tslint -p tsconfig.json --type-check src/routes-generator.ts",
