@@ -5,7 +5,7 @@
   "main": "./dist/routes-generator.js",
   "types": "./dist/routes-generator.d.ts",
   "files": [
-    "dist"
+    "dist/routes-generator.*"
   ],
   "keywords": [
     "routes",
