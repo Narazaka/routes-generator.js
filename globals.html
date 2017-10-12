@@ -59,45 +59,24 @@
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="routes-generator-rest-like-url-routes-generator-for-frontend-for-react-router-etc-">routes-generator - REST like URL routes generator for frontend (for react-router etc)</h1>
-				<h2 id="install">Install</h2>
-				<pre><code>npm <span class="hljs-keyword">install</span> routes-generator
-</code></pre><h2 id="usage">Usage</h2>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { both, collection, member, routes } <span class="hljs-keyword">from</span> <span class="hljs-string">"./routes-generator"</span>;
-
-<span class="hljs-keyword">const</span> r = routes({
-    config: collection({
-        flag: collection(),
-    }),
-    items: both(
-        collection({
-            <span class="hljs-keyword">new</span>: collection(),
-        }),
-        member({
-            edit: collection(),
-        }),
-    ),
-    users: both(
-        collection(),
-        member(),
-    ),
-});
-
-<span class="hljs-built_in">console</span>.log(r.config().flag()); <span class="hljs-comment">// "/config/flag"</span>
-<span class="hljs-built_in">console</span>.log(r.items().toString()); <span class="hljs-comment">// "/items"</span>
-<span class="hljs-built_in">console</span>.log(r.items(<span class="hljs-number">1</span>).toString()); <span class="hljs-comment">// "/items/1"</span>
-<span class="hljs-built_in">console</span>.log(r.items().new()); <span class="hljs-comment">// "/items/new"</span>
-<span class="hljs-built_in">console</span>.log(r.items(<span class="hljs-number">1</span>).edit()); <span class="hljs-comment">// "/items/1/edit"</span>
-</code></pre>
-				<h2 id="license">License</h2>
-				<p>This is released under <a href="https://narazaka.net/license/MIT?2017">MIT License</a>.</p>
-			</div>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>External modules</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-external-module"><a href="modules/_routes_generator_.html" class="tsd-kind-icon">"routes-<wbr>generator"</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
-					<li class="globals  ">
+					<li class="globals current ">
 						<a href="globals.html"><em>Globals</em></a>
 					</li>
 					<li class=" tsd-kind-external-module">

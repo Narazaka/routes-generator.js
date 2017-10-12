@@ -3,17 +3,17 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>routes-generator</title>
+	<title>ToStringable | routes-generator</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<link rel="stylesheet" href="assets/css/main.css">
+	<link rel="stylesheet" href="../assets/css/main.css">
 </head>
 <body>
 <header>
 	<div class="tsd-page-toolbar">
 		<div class="container">
 			<div class="table-wrap">
-				<div class="table-cell" id="tsd-search" data-index="assets/js/search.js" data-base=".">
+				<div class="table-cell" id="tsd-search" data-index="../assets/js/search.js" data-base="..">
 					<div class="field">
 						<label for="tsd-search-field" class="tsd-widget search no-caption">Search</label>
 						<input id="tsd-search-field" type="text" />
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="index.html" class="title">routes-generator</a>
+					<a href="../index.html" class="title">routes-generator</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -49,64 +49,123 @@
 		<div class="container">
 			<ul class="tsd-breadcrumb">
 				<li>
-					<a href="globals.html">Globals</a>
+					<a href="../globals.html">Globals</a>
+				</li>
+				<li>
+					<a href="../modules/_routes_generator_.html">&quot;routes-generator&quot;</a>
+				</li>
+				<li>
+					<a href="_routes_generator_.tostringable.html">ToStringable</a>
 				</li>
 			</ul>
-			<h1> routes-generator</h1>
+			<h1>Interface ToStringable</h1>
 		</div>
 	</div>
 </header>
 <div class="container container-main">
 	<div class="row">
 		<div class="col-8 col-content">
-			<div class="tsd-panel tsd-typography">
-				<h1 id="routes-generator-rest-like-url-routes-generator-for-frontend-for-react-router-etc-">routes-generator - REST like URL routes generator for frontend (for react-router etc)</h1>
-				<h2 id="install">Install</h2>
-				<pre><code>npm <span class="hljs-keyword">install</span> routes-generator
-</code></pre><h2 id="usage">Usage</h2>
-				<pre><code class="lang-typescript"><span class="hljs-keyword">import</span> { both, collection, member, routes } <span class="hljs-keyword">from</span> <span class="hljs-string">"./routes-generator"</span>;
-
-<span class="hljs-keyword">const</span> r = routes({
-    config: collection({
-        flag: collection(),
-    }),
-    items: both(
-        collection({
-            <span class="hljs-keyword">new</span>: collection(),
-        }),
-        member({
-            edit: collection(),
-        }),
-    ),
-    users: both(
-        collection(),
-        member(),
-    ),
-});
-
-<span class="hljs-built_in">console</span>.log(r.config().flag()); <span class="hljs-comment">// "/config/flag"</span>
-<span class="hljs-built_in">console</span>.log(r.items().toString()); <span class="hljs-comment">// "/items"</span>
-<span class="hljs-built_in">console</span>.log(r.items(<span class="hljs-number">1</span>).toString()); <span class="hljs-comment">// "/items/1"</span>
-<span class="hljs-built_in">console</span>.log(r.items().new()); <span class="hljs-comment">// "/items/new"</span>
-<span class="hljs-built_in">console</span>.log(r.items(<span class="hljs-number">1</span>).edit()); <span class="hljs-comment">// "/items/1/edit"</span>
-</code></pre>
-				<h2 id="license">License</h2>
-				<p>This is released under <a href="https://narazaka.net/license/MIT?2017">MIT License</a>.</p>
-			</div>
+			<section class="tsd-panel tsd-comment">
+				<div class="tsd-comment tsd-typography">
+					<div class="lead">
+						<p>can make path string</p>
+					</div>
+				</div>
+			</section>
+			<section class="tsd-panel tsd-hierarchy">
+				<h3>Hierarchy</h3>
+				<ul class="tsd-hierarchy">
+					<li>
+						<span class="target">ToStringable</span>
+					</li>
+				</ul>
+			</section>
+			<section class="tsd-panel-group tsd-index-group">
+				<h2>Index</h2>
+				<section class="tsd-panel tsd-index-panel">
+					<div class="tsd-index-content">
+						<section class="tsd-index-section ">
+							<h3>Methods</h3>
+							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="_routes_generator_.tostringable.html#tostring" class="tsd-kind-icon">to<wbr>String</a></li>
+							</ul>
+						</section>
+					</div>
+				</section>
+			</section>
+			<section class="tsd-panel-group tsd-member-group ">
+				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
+					<a name="tostring" class="tsd-anchor"></a>
+					<h3>to<wbr>String</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
+						<li class="tsd-signature tsd-kind-icon">to<wbr>String<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in <a href="https://github.com/Narazaka/routes-generator.js/blob/0126f9d/src/routes-generator.ts#L42">routes-generator.ts:42</a></li>
+								</ul>
+							</aside>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span></h4>
+						</li>
+					</ul>
+				</section>
+			</section>
 		</div>
 		<div class="col-4 col-menu menu-sticky-wrap menu-highlight">
 			<nav class="tsd-navigation primary">
 				<ul>
 					<li class="globals  ">
-						<a href="globals.html"><em>Globals</em></a>
+						<a href="../globals.html"><em>Globals</em></a>
 					</li>
-					<li class=" tsd-kind-external-module">
-						<a href="modules/_routes_generator_.html">"routes-<wbr>generator"</a>
+					<li class="current tsd-kind-external-module">
+						<a href="../modules/_routes_generator_.html">"routes-<wbr>generator"</a>
 					</li>
 				</ul>
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="../classes/_routes_generator_.pathbuilder.html" class="tsd-kind-icon">Path<wbr>Builder</a>
+					</li>
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_routes_generator_.routes.html" class="tsd-kind-icon">Routes</a>
+					</li>
+				</ul>
+				<ul class="current">
+					<li class="current tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="_routes_generator_.tostringable.html" class="tsd-kind-icon">To<wbr>Stringable</a>
+						<ul>
+							<li class=" tsd-kind-method tsd-parent-kind-interface">
+								<a href="_routes_generator_.tostringable.html#tostring" class="tsd-kind-icon">to<wbr>String</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+				<ul class="after-current">
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_routes_generator_.html#collectionreturntype" class="tsd-kind-icon">Collection<wbr>Return<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_routes_generator_.html#membereturntype" class="tsd-kind-icon">Membereturn<wbr>Type</a>
+					</li>
+					<li class=" tsd-kind-type-alias tsd-parent-kind-external-module">
+						<a href="../modules/_routes_generator_.html#pathpart" class="tsd-kind-icon">Path<wbr>Part</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_routes_generator_.html#both" class="tsd-kind-icon">both</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_routes_generator_.html#collection" class="tsd-kind-icon">collection</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_routes_generator_.html#member" class="tsd-kind-icon">member</a>
+					</li>
+					<li class=" tsd-kind-function tsd-parent-kind-external-module tsd-has-type-parameter">
+						<a href="../modules/_routes_generator_.html#routes-1" class="tsd-kind-icon">routes</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -175,7 +234,7 @@
 	<p>Generated using <a href="http://typedoc.org/" target="_blank">TypeDoc</a></p>
 </div>
 <div class="overlay"></div>
-<script src="assets/js/main.js"></script>
-<script>if (location.protocol == 'file:') document.write('<script src="assets/js/search.js"><' + '/script>');</script>
+<script src="../assets/js/main.js"></script>
+<script>if (location.protocol == 'file:') document.write('<script src="../assets/js/search.js"><' + '/script>');</script>
 </body>
 </html>
