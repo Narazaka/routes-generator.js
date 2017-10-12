@@ -13,7 +13,7 @@ npm install routes-generator
 - **[API Document](https://narazaka.github.io/routes-generator.js/)**
 
 ```typescript
-import { both, collection, member, routes } from "./routes-generator";
+import { both, collection, member, routes } from "routes-generator";
 
 const r = routes({
     config: collection({
