@@ -25,6 +25,7 @@
             true,
             "check-space"
         ],
-        "completed-docs": false
+        "completed-docs": false,
+        "no-inferred-empty-object-type": false
     }
 }

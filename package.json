@@ -18,7 +18,7 @@
     "prepublish": "npm run dist",
     "dist": "tsc",
     "test": "mocha",
-    "lint": "tslint -p tsconfig.json --type-check routes-generator.ts",
+    "lint": "tslint -p tsconfig.json --type-check routes-generator.ts test/*.ts",
     "doc": "typedoc --out doc --disableOutputCheck --excludeNotExported --excludeExternals routes-generator.ts"
   },
   "author": "narazaka",
