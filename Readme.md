@@ -40,6 +40,11 @@ console.log(r.items().new()); // "/items/new"
 console.log(r.items(1).edit()); // "/items/1/edit"
 ```
 
+## With TypeScript
+
+- You can change the path by IDE(VSCode etc.)'s symbol change function.
+- You can easily complement the path with IDE.
+
 ## License
 
 This is released under [MIT License](https://narazaka.net/license/MIT?2017).
