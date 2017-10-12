@@ -1,4 +1,6 @@
-# routes-generator - REST like URL routes generator for frontend (for react-router etc)
+# [routes-generator.js](https://github.com/Narazaka/routes-generator.js)
+
+REST like URL routes generator for frontend (for react-router etc)
 
 ## Install
 
