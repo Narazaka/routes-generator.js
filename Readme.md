@@ -8,6 +8,8 @@ npm install routes-generator
 
 ## Usage
 
+- **[API Document](https://narazaka.github.io/routes-generator.js/)**
+
 ```typescript
 import { both, collection, member, routes } from "./routes-generator";
 
