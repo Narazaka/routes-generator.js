@@ -1,6 +1,6 @@
 {
   "name": "routes-generator",
-  "version": "0.1.4",
+  "version": "0.2.0",
   "description": "REST like URL routes generator for frontend (for react-router etc)",
   "main": "./dist/routes-generator.js",
   "types": "./dist/routes-generator.d.ts",
