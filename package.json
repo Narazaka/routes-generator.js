@@ -2,12 +2,12 @@
   "name": "routes-generator",
   "version": "1.0.0",
   "description": "REST like URL routes generator for frontend (for react-router etc)",
-  "main": "routes-generator.js",
-  "typings": "routes-generator.d.ts",
+  "main": "./dist/routes-generator.js",
+  "typings": "./dist/routes-generator.d.ts",
   "scripts": {
     "dist": "tsc",
-    "lint": "tslint -p tsconfig.json --type-check routes-generator.ts",
-    "doc": "typedoc --out doc --disableOutputCheck --excludeNotExported --excludeExternals routes-generator.ts"
+    "lint": "tslint -p tsconfig.json --type-check src/routes-generator.ts",
+    "doc": "typedoc --out doc --disableOutputCheck --excludeNotExported --excludeExternals src/routes-generator.ts"
   },
   "author": "narazaka",
   "license": "MIT",
