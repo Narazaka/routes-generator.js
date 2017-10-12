@@ -28,7 +28,7 @@ export class PathBuilder {
      * path string
      */
     toString() {
-        return this.parts.map((part) => `/${part}`).join("/");
+        return this.parts.map((part) => `/${part}`).join("");
     }
 }
 
@@ -229,16 +229,18 @@ export function member<T extends Routes>(children: T): (id: PathPart) => T & ToS
  * r.foos(1).bar() // "/foos/1/bar"
  * ```
  */
-export function member<T extends Routes>(children: T, parentPath: true): (id: PathPart) => T;
-export function member<T extends Routes>(children?: T, parentPath = false) {
-    if (children) {
-        return memberWithChildren(children, parentPath);
+export function member<T extends Routes>(parentPath: false, children: T): (id: PathPart) => T;
+export function member<T extends Routes>(parentPath?: T | boolean, children?: T) {
+    if (typeof parentPath === "boolean") {
+        return memberWithChildren(parentPath, children as T);
+    } else if (parentPath) {
+        return memberWithChildren(true, parentPath);
     } else {
         return memberSimple();
     }
 }
 
-function memberWithChildren<T extends Routes>(children: T, parentPath: boolean) {
+function memberWithChildren<T extends Routes>(parentPath: boolean, children: T) {
     function memberWithChildrenPathPart(this: PathBuilder, id: PathPart) {
         const pathBuilder = this.addPart(id);
         for (const key of Object.keys(children)) {
@@ -246,8 +248,8 @@ function memberWithChildren<T extends Routes>(children: T, parentPath: boolean) 
         }
         children.toString =
             parentPath ?
-            () => { throw new Error("toString() not alowed"); } :
-            () => pathBuilder.toString();
+            () => pathBuilder.toString() :
+            () => { throw new Error("toString() not alowed"); };
 
         return children;
     }
@@ -292,8 +294,8 @@ export function both<
     MR extends MembereturnType<M>
     // tslint:disable-next-line no-shadowed-variable
 >(collection: CR, member: MR): CR & MR {
-    function bothPathPart(id?: PathPart) {
-        return id ? member(id) : collection();
+    function bothPathPart(this: PathBuilder, id?: PathPart) {
+        return id ? member.call(this, id) : collection.call(this);
     }
 
     return bothPathPart as CR & MR;
