@@ -84,7 +84,7 @@ export function routes<T extends Routes>(rootPath: T | boolean, routes?: T): T {
     }
     _routes.toString =
         !rootPath ?
-        () => { throw new Error("toString() not alowed"); } :
+        () => { throw new Error("toString() not allowed"); } :
         () => "/";
 
     return _routes;
@@ -161,7 +161,7 @@ function collectionWithChildren<T extends Routes>(parentPath: boolean, children:
         children.toString =
             parentPath ?
             () => this.toString() :
-            () => { throw new Error("toString() not alowed"); };
+            () => { throw new Error("toString() not allowed"); };
 
         return children;
     }
@@ -249,7 +249,7 @@ function memberWithChildren<T extends Routes>(parentPath: boolean, children: T) 
         children.toString =
             parentPath ?
             () => pathBuilder.toString() :
-            () => { throw new Error("toString() not alowed"); };
+            () => { throw new Error("toString() not allowed"); };
 
         return children;
     }
