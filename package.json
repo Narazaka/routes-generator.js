@@ -1,8 +1,9 @@
 {
-  "name": "path-generator",
+  "name": "routes-generator",
   "version": "1.0.0",
-  "description": "URL path generator",
-  "main": "index.js",
+  "description": "REST like URL routes generator for frontend (for react-router etc)",
+  "main": "routes-generator.js",
+  "typings": "routes-generator.d.ts",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
@@ -10,6 +11,7 @@
   "license": "MIT",
   "dependencies": {
     "tslint": "^5.7.0",
+    "typedoc": "^0.9.0",
     "typescript": "^2.5.3"
   }
 }
