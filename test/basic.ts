@@ -149,6 +149,6 @@ describe("nested routes with with both", () => {
     testPath("/m/1", () => r.m(1).toString());
     testPath("/m/1/b", () => r.m(1).b().toString());
     testPath("/m/1/b/c", () => r.m(1).b().c().toString());
-    testPath("/m/1/b/1", () => r.m(1).b(1).toString());
-    testPath("/m/1/b/1/c", () => r.m(1).b(1).c().toString());
+    testPath("/m/1/b/0", () => r.m(1).b(0).toString());
+    testPath("/m/1/b/0/c", () => r.m(1).b(0).c().toString());
 });

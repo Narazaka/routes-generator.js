@@ -26,6 +26,10 @@
             "check-space"
         ],
         "completed-docs": false,
-        "no-inferred-empty-object-type": false
+        "no-inferred-empty-object-type": false,
+        "triple-equals": [
+            true,
+            "allow-null-check"
+        ]
     }
 }

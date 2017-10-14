@@ -295,7 +295,8 @@ export function both<
     // tslint:disable-next-line no-shadowed-variable
 >(collection: CR, member: MR): CR & MR {
     function bothPathPart(this: PathBuilder, id?: PathPart) {
-        return id ? member.call(this, id) : collection.call(this);
+        // tslint:disable-next-line no-null-keyword strict-type-predicates
+        return id == null ? collection.call(this) : member.call(this, id);
     }
 
     return bothPathPart as CR & MR;
