@@ -88,3 +88,67 @@ describe("both", () => {
         assert(r.foos(1) === "/foos/1");
     });
 });
+
+describe("nested collections and members", () => {
+    const r = routes({
+        c: collection({
+            c: collection({
+                m: member({
+                    m: member({
+                        c: collection(),
+                    }),
+                }),
+            }),
+        }),
+    });
+
+    function testPath(p: string, cb: () => string) {
+        it(p, () => assert(cb() === p));
+    }
+
+    testPath("/c", () => r.c().toString());
+    testPath("/c/c", () => r.c().c().toString());
+    testPath("/c/c/m/1", () => r.c().c().m(1).toString());
+    testPath("/c/c/m/1/m/0", () => r.c().c().m(1).m(0).toString());
+    testPath("/c/c/m/1/m/0/c", () => r.c().c().m(1).m(0).c().toString());
+});
+
+describe("nested routes with with both", () => {
+    const r = routes({
+        c: collection({
+            b: both(
+                collection({
+                    c: collection(),
+                }),
+                member({
+                    c: collection(),
+                }),
+            ),
+        }),
+        m: member({
+            b: both(
+                collection({
+                    c: collection(),
+                }),
+                member({
+                    c: collection(),
+                }),
+            ),
+        }),
+    });
+
+    function testPath(p: string, cb: () => string) {
+        it(p, () => assert(cb() === p));
+    }
+
+    testPath("/c", () => r.c().toString());
+    testPath("/c/b", () => r.c().b().toString());
+    testPath("/c/b/c", () => r.c().b().c().toString());
+    testPath("/c/b/1", () => r.c().b(1).toString());
+    testPath("/c/b/1/c", () => r.c().b(1).c().toString());
+    testPath("/m/1", () => r.m(1).toString());
+    testPath("/m/1/b", () => r.m(1).b().toString());
+    testPath("/m/1/b/c", () => r.m(1).b().c().toString());
+    testPath("/m/1/b/1", () => r.m(1).b(1).toString());
+    testPath("/m/1/b/1/c", () => r.m(1).b(1).c().toString());
+});
