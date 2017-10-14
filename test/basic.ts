@@ -1,7 +1,7 @@
 /// <reference types="mocha" />
 
 import * as assert from "power-assert";
-import { both, collection, member, routes } from "../routes-generator";
+import { both, collection, member, routes } from "../lib/routes-generator";
 
 describe("routes", () => {
     it("/", () => {
