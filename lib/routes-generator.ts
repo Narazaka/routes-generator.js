@@ -242,16 +242,18 @@ export function member<T extends Routes>(parentPath?: T | boolean, children?: T)
 
 function memberWithChildren<T extends Routes>(parentPath: boolean, children: T) {
     function memberWithChildrenPathPart(this: PathBuilder, id: PathPart) {
+        // tslint:disable-next-line no-object-literal-type-assertion
+        const newChildren = {} as T;
         const pathBuilder = this.addPart(id);
         for (const key of Object.keys(children)) {
-            children[key] = children[key].bind(pathBuilder.addPart(key));
+            newChildren[key] = children[key].bind(pathBuilder.addPart(key));
         }
-        children.toString =
+        newChildren.toString =
             parentPath ?
             () => pathBuilder.toString() :
             () => { throw new Error("toString() not allowed"); };
 
-        return children;
+        return newChildren;
     }
 
     return memberWithChildrenPathPart;

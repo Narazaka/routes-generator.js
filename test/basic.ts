@@ -152,3 +152,19 @@ describe("nested routes with with both", () => {
     testPath("/m/1/b/0", () => r.m(1).b(0).toString());
     testPath("/m/1/b/0/c", () => r.m(1).b(0).c().toString());
 });
+
+describe("multiple call", () => {
+    const r = routes({
+        m: member({
+            c: collection(),
+        }),
+    });
+
+    it("/m/1 and /m/0", () => {
+        assert(r.m(1).toString() === "/m/1");
+        assert(r.m(0).toString() === "/m/0");
+        assert(r.m(1).c().toString() === "/m/1/c");
+        assert(r.m(0).c().toString() === "/m/0/c");
+        assert(r.m(1).c().toString() === "/m/1/c");
+    });
+});
