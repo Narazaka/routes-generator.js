@@ -79,15 +79,17 @@ export function routes<T extends Routes>(rootPath: false, routes: T): T;
 export function routes<T extends Routes>(rootPath: T | boolean, routes?: T): T {
     const pathBuilder = new PathBuilder();
     const _routes = routes ? routes : rootPath as T;
+    // tslint:disable-next-line no-object-literal-type-assertion
+    const newChildren = {} as T;
     for (const key of Object.keys(_routes)) {
-        _routes[key] = _routes[key].bind(pathBuilder.addPart(key));
+        newChildren[key] = _routes[key].bind(pathBuilder.addPart(key));
     }
-    _routes.toString =
+    newChildren.toString =
         !rootPath ?
         () => { throw new Error("toString() not allowed"); } :
         () => "/";
 
-    return _routes;
+    return newChildren;
 }
 
 /** collection() return type */
