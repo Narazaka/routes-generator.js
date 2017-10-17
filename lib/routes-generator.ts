@@ -155,15 +155,17 @@ export function collection<T extends Routes>(parentPath?: T | boolean, children?
 
 function collectionWithChildren<T extends Routes>(parentPath: boolean, children: T) {
     function collectionWithChildrenPathPart(this: PathBuilder) {
+        // tslint:disable-next-line no-object-literal-type-assertion
+        const newChildren = {} as T;
         for (const key of Object.keys(children)) {
-            children[key] = children[key].bind(this.addPart(key));
+            newChildren[key] = children[key].bind(this.addPart(key));
         }
-        children.toString =
+        newChildren.toString =
             parentPath ?
             () => this.toString() :
             () => { throw new Error("toString() not allowed"); };
 
-        return children;
+        return newChildren;
     }
 
     return collectionWithChildrenPathPart;

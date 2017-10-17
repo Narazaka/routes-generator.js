@@ -157,6 +157,9 @@ describe("multiple call", () => {
     const r = routes({
         m: member({
             c: collection(),
+            c2: collection({
+                c: collection(),
+            }),
         }),
     });
 
@@ -166,5 +169,11 @@ describe("multiple call", () => {
         assert(r.m(1).c().toString() === "/m/1/c");
         assert(r.m(0).c().toString() === "/m/0/c");
         assert(r.m(1).c().toString() === "/m/1/c");
+        assert(r.m(1).c2().toString() === "/m/1/c2");
+        assert(r.m(0).c2().toString() === "/m/0/c2");
+        assert(r.m(1).c2().toString() === "/m/1/c2");
+        assert(r.m(1).c2().c().toString() === "/m/1/c2/c");
+        assert(r.m(0).c2().c().toString() === "/m/0/c2/c");
+        assert(r.m(1).c2().c().toString() === "/m/1/c2/c");
     });
 });
