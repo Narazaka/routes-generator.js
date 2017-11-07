@@ -4,3 +4,5 @@ doc
 *.d.ts
 *.js.map
 yarn.lock
+coverage
+.nyc_output
