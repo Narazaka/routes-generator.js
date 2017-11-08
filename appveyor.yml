@@ -1,0 +1,17 @@
+version: "{build}"
+branches:
+  except:
+    - gh-pages
+install:
+  - ps: Install-Product node $env:nodejs_version
+  - node --version
+  - npm install
+test_script:
+  - npm test
+build: off
+deploy: off
+environment:
+  matrix:
+    - nodejs_version: 7
+cache:
+  - node_modules
