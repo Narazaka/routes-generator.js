@@ -1,5 +1,7 @@
 # [routes-generator.js](https://github.com/Narazaka/routes-generator.js)
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/Narazaka/routes-generator.js.svg)](https://greenkeeper.io/)
+
 REST like URL routes generator for frontend (for react-router etc)
 
 ## Install
