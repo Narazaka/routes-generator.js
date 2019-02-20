@@ -28,11 +28,11 @@
     "@types/power-assert": "^1.4.29",
     "espower-typescript": "^9.0.0",
     "mocha": "^6.0.0",
-    "nyc": "^12.0.1",
+    "nyc": "^13.2.0",
     "power-assert": "^1.4.4",
     "ts-node": "^7.0.0",
     "tslint": "^5.7.0",
-    "typedoc": "^0.13.0",
+    "typedoc": "^0.14.0",
     "typescript": "^2.5.3"
   }
 }
